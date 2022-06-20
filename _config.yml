@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 熊桑的个人博客
+title: 爱扑bug的熊
 subtitle: 一个热爱编程的大学生
 description: 这里是爱扑bug的熊的个人博客
 keywords: c,c++,linux
@@ -13,8 +13,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://blogbearsir.netlify.app
-permalink: :year/:month/:day/:title/
+url: https://blog.cuijiacai.com
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
