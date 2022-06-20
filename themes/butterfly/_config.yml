@@ -3,24 +3,26 @@
 # --------------------------------------
 
 menu:
-  Home: / || fas fa-home
-  Archives: /archives/ || fas fa-archive
-  Tags: /tags/ || fas fa-tags
-  Categories: /categories/ || fas fa-folder-open
-  List||fas fa-list:
-    Music: /music/ || fas fa-music
-    Movie: /movies/ || fas fa-video
-  Link: /link/ || fas fa-link
-  About: /about/ || fas fa-heart
+  首页: / || fas fa-home
+  时间轴: /archives/ || fas fa-archive
+  标签: /tags/ || fas fa-tags
+  分类: /categories/ || fas fa-folder-open
+  清单||fa fa-heartbeat:
+    音乐: /music/ || fas fa-music
+    照片: /Gallery/ || fas fa-images
+    电影: /movies/ || fas fa-video
+  友链: /link/ || fas fa-link
+  关于: /about/ || fas fa-heart
+
 
 # Code Blocks (代碼相關)
 # --------------------------------------
 
-highlight_theme: light #  darker / pale night / light / ocean / mac / mac light / false
+highlight_theme: mac #  light / darker / pale night / light / ocean / mac / mac light / false
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
 highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
-highlight_height_limit: false # unit: px
+highlight_height_limit: 200 # unit: px
 code_word_wrap: false
 
 # copy settings
@@ -35,8 +37,8 @@ copy:
 # formal:
 #   icon: link || the description
 social:
-  # fab fa-github: https://github.com/xxxxx || Github
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email
+  fab fa-github: https://github.com/JacyCui || Github
+  fas fa-envelope: mailto:jiacaicui@163.com || Email
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
@@ -80,14 +82,14 @@ favicon: /img/favicon.png
 
 # Avatar (頭像)
 avatar:
-  img: https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
+  img: /img/profile.png # https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img:
+index_img: /img/banner.jpg
 
 # If the banner of page not setting, it will show the top_img
 default_top_img:
@@ -509,12 +511,12 @@ enter_transitions: true
 # canvas_ribbon (靜止彩帶背景)
 # See: https://github.com/hustcc/ribbon.js
 canvas_ribbon:
-  enable: false
+  enable: true
   size: 150
   alpha: 0.6
   zIndex: -1
-  click_to_change: false
-  mobile: false
+  click_to_change: true
+  mobile: true
 
 # Fluttering Ribbon (動態彩帶)
 canvas_fluttering_ribbon:
@@ -547,8 +549,8 @@ fireworks:
 
 # Mouse click effects: Heart symbol (鼠標點擊效果: 愛心)
 click_heart:
-  enable: false
-  mobile: false
+  enable: true
+  mobile: true
 
 # Mouse click effects: words (鼠標點擊效果: 文字)
 ClickShowText:
