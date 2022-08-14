@@ -296,7 +296,7 @@ gitalk:
   client_secret: 3c36f30454169fb2f30075a166a6f385faeec1ad
   repo: https://github.com/JacyCui/bearBlog.git
   owner: JacyCui
-  admin: JacyCui
+  admin: [JacyCui]
   option: 
 
 # valine
