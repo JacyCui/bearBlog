@@ -294,7 +294,7 @@ livere:
 gitalk:
   client_id: 447d4e6b80baf28d391a
   client_secret: 3c36f30454169fb2f30075a166a6f385faeec1ad
-  repo: https://github.com/JacyCui/bearBlog.git
+  repo: bearBlog
   owner: JacyCui
   admin: [JacyCui]
   option: 
