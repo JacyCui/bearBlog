@@ -57,6 +57,8 @@ tag: 实用教程
 brew install node # homebrew安装nodejs
 ```
 
+> Linux类似，用包管理软件即可。Windows的话需要从官网下载安装，安装完成后建议用git-bash（在安装git的时候应该已经同时安装了，如果没有的话可以去[官网](https://git-scm.com/)下载）来进行后续的操作，因为windows和unix的命令体系有差别。
+
 最后查看版本信息以确认环境配置信息：
 
 ```bash
@@ -286,31 +288,19 @@ Netlify是一个国外的免费的提供静态网站部署服务的平台，能�
 
 ## 建站步骤
 
-- 首先注册并登陆[Netlify](https://www.netlify.com/)
-
+1. 首先注册并登陆[Netlify](https://www.netlify.com/)
     - 这一步需要能够科学上网，因为这是一个国外的网站
     - 我们的博客在开启cloundflare的CDN加速之前，也只能通过科学上网的方式访问
-
-- 新建站点：
-
+2. 新建站点：
     - ![create-site](https://res.cloudinary.com/cuijiacai/image/upload/v1660638151/blog/blog-building/create-site_kvn2yh.png)
-
-- 连接`github`：
-
+3. 连接`github`：
     - ![connect-github](https://res.cloudinary.com/cuijiacai/image/upload/v1660638223/blog/blog-building/connect-github_cxvuap.png)
-
-- 选择刚刚上传的博客项目：
-
+4. 选择刚刚上传的博客项目：
     - ![select-project](https://res.cloudinary.com/cuijiacai/image/upload/v1660638263/blog/blog-building/select-project_o9jxek.png)
-
-- 一切默认，除了构建命令改成我们之前设置的`npm run netlify`：
-
+5. 一切默认，除了构建命令改成我们之前设置的`npm run netlify`：
     - ![site-config](https://res.cloudinary.com/cuijiacai/image/upload/v1660638373/blog/blog-building/site-config_cn40cl.png)
-
     > 这里BaseDirectory为空表示项目目录是仓库目录的根目录。
-
-- 构建完成后我们就能够看到一个URL，打开网址就是我们的个人博客了
-
+6. 构建完成后我们就能够看到一个URL，打开网址就是我们的个人博客了
     - ![url-generate](https://res.cloudinary.com/cuijiacai/image/upload/v1660638412/blog/blog-building/url-generate_fyj5n6.png)
 
 可以根据提示进行进一步的设置，比如说设置一下二级域名（即`netlify.app`之前的域名）。
@@ -329,14 +319,23 @@ Netlify是一个国外的免费的提供静态网站部署服务的平台，能�
 
 设置完毕之后需要等待一段时间，因为DNS服务器需要一段时间来进行同步。
 
+然后，我们还需要回到netlify中配置一下自己的用户域名，这样的话可以在国外获得netlify本身的CDN支持。
+1. 在netlify设置用户域名。
+    - ![set-custom-domain](https://res.cloudinary.com/cuijiacai/image/upload/v1660963023/blog/blog-building/set-custom-domain_yrqree.png)
+2. 进行相关的配置，由于我们的域名本身已经配置了解析，这里会显示出来，不用再额外添加记录，只需要一路默认即可。
+    - ![add-record](https://res.cloudinary.com/cuijiacai/image/upload/v1660963541/blog/blog-building/add-record_rrjk1h.png)
+    - ![activate-dns](https://res.cloudinary.com/cuijiacai/image/upload/v1660963589/blog/blog-building/activate-dns_u7t5ob.png)
+3. 设置一下netlify本身的对于国外CDN的支持。
+    - ![netlify-cdn](https://res.cloudinary.com/cuijiacai/image/upload/v1660964526/blog/blog-building/netlify-cdn_zrjfq6.png)
+
+
 之后，我们就可以通过自己配置的域名访问自己的个人博客，比如说我的博客地址是 https://blog.cuijiacai.com 。
 
-> 这里`https`访问需要在`netlify`中配置，否则只能`http`访问。
+> 这里`https`访问需要在`netlify`中配置，否则应该只能`http`访问。
 > ![https-config](https://res.cloudinary.com/cuijiacai/image/upload/v1660638740/blog/blog-building/https-config_eaziya.png)
+> 需要注意一下的是，此刻的https配置过程中的dns验证已经可以通过，但是证书检查会失败，等到后面clouldflare加速配置完成之后，这个问题 就可以解决了。所以暂时应该只能http访问。
 
 但是，此刻我们的博客访问依然需要科学上网，因为我们还没有国内的CDN的支持，下面，我们来解决这个问题。
-
-
 
 # ClouldFlare加速
 
@@ -346,32 +345,50 @@ Netlify 虽然已经提供了 CDN 加速，但在使用过程中发现国内访�
 
 ## 加速步骤
 
-- 注册[Clouldflare](https://www.cloudflare.com/zh-cn/)并登陆
-- 添加站点
-- 选择免费套餐
-- 添加 DNS 记录
-    - 一般情况下 Cloudflare 会检测出来几条 DNS 记录，类型大多数是A，或者AAAA，由于我们是转发，所以应该是 CNAME 类型才对。所以全部删除，手动添加。
-- 更改名称服务器
+1. 注册[Clouldflare](https://www.cloudflare.com/zh-cn/)并登陆
+2. 添加站点
+    - ![add-site](https://res.cloudinary.com/cuijiacai/image/upload/v1660964770/blog/blog-building/add-site_blp2r0.png)
+    - ![config-site](https://res.cloudinary.com/cuijiacai/image/upload/v1660964945/blog/blog-building/config-site_qtphxh.png)
+3. 选择免费套餐
+    - ![choose-project](https://res.cloudinary.com/cuijiacai/image/upload/v1660964988/blog/blog-building/choose-project_ukqsam.png)
+4. 添加 DNS 记录
+    - 一般情况下 Cloudflare 会检测出来几条 DNS 记录，类型大多数是A，或者AAAA，由于我们是转发，所以应该是 CNAME 类型才对。有必要的话可能得手动配置一下。
+    - ![update-record](https://res.cloudinary.com/cuijiacai/image/upload/v1660965237/blog/blog-building/update-record_rk9igi.png)
+5. 更改名称服务器
     - 这个步骤Cloudflare会提供一个在线的教程，主要步骤是在你的域名服务商那里修改 dns 解析服务器为 cloudflare 提供的地址，修改完成后点击完成。
+    - ![modify-server](https://res.cloudinary.com/cuijiacai/image/upload/v1660965423/blog/blog-building/modify-server_knq1t7.png)
+    - 以阿里云为例，设置的步骤如下:
+        1. 进入域名的配置界面
+            - ![dns-manage](https://res.cloudinary.com/cuijiacai/image/upload/v1660965560/blog/blog-building/change-server_lv3nnv.png)
+        2. 将域名服务器从阿里云的默认服务器改成clouldflare的服务器
+            - ![change-server](https://res.cloudinary.com/cuijiacai/image/upload/v1660965560/blog/blog-building/change-server_lv3nnv.png)
+    - 配置完成后，clouldflare会有邮件通知(一般不会等太久)
+        ![mail-notice](https://res.cloudinary.com/cuijiacai/image/upload/v1660965658/blog/blog-building/mail-notice_nvplp3.png)
 
+## 配置https
 
+在clouldflare配置完成之后，我们可以回到netlify去配置一下https访问。
 
+1. 先确认一下dns解析:
+    - ![verify-dns](https://res.cloudinary.com/cuijiacai/image/upload/v1660965994/blog/blog-building/verify-dns_t2hxrd.png)
+2. 然后自动安装证书:
+    - ![certify](https://res.cloudinary.com/cuijiacai/image/upload/v1660965995/blog/blog-building/certify_syydcb.png)
+3. 最后看到如下的界面，就说明https配置完成了:
+    - ![https-config](https://res.cloudinary.com/cuijiacai/image/upload/v1660638740/blog/blog-building/https-config_eaziya.png)
 
+# 测试站点
 
+等待一段时间之后，我们可以试着用自己的浏览器去访问自己配置的域名地址，如果在不科学上网的情况下能够正常看到如下的默认页面，则我们的个人博客就配置成功了。
 
+![https://res.cloudinary.com/cuijiacai/image/upload/v1660966193/blog/blog-building/default-page_f8zjgw.png]
 
+本机能够正常访问之后，我们可以用[拨测](https://www.boce.com/)来检测一下域名解析与访问的速度。
 
+![speed](https://res.cloudinary.com/cuijiacai/image/upload/v1660966712/blog/blog-building/speed_e7kocr.png)
 
+到此为止，我们的个人博客就彻底搭建完成啦。后续我们只需要修改博客的配置文件和博客本身的markdown源文件，然后push到github上，netlify会自动帮我们运行当初配置的建站脚本，然后将生成在public文件夹中的静态网页部署出去。
 
-
-
-
-
-
-
-
-
-
+关于hexo博客的[写作方法](https://hexo.io/zh-cn/docs/writing)与各种好看的[主题的配置](https://hexo.io/themes/)可以查看官方的文档，多尝试多摸索，配置自己的个性页面吧。
 
 
 
