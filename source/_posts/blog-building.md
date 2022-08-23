@@ -10,7 +10,10 @@ tag: 实用教程
 
 # 引言
 
-这是一个个人博客搭建的教程，会手把手教读者从零开始搭建自己的个人博客。
+这是一个个人博客搭建的教程，会手把手教读者从零开始搭建自己的个人博客。这个图文教程重点聚焦于实践操作的不部分，下面这个视频和本教程是配套的，不过它的重点会更聚焦于理论一些。
+
+<iframe src="//player.bilibili.com/player.html?aid=729827798&bvid=BV1qD4y1z783&cid=811525188&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" height="500px" width="100%"> </iframe>
+
 
 ## 写博客的好处
 
