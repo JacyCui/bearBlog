@@ -533,5 +533,5 @@ $$
 {% endhideToggle %}
 
 {% note green 'fas fa-check' flat %}
-恭喜完成离散数学与概率论第1讲所有内容的学习！
+恭喜完成离散数学与概率论第1讲《命题逻辑》所有内容的学习！
 {% endnote %}
