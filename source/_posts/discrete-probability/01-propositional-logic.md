@@ -120,7 +120,9 @@ cover: https://res.cloudinary.com/cuijiacai/image/upload/v1661584594/discrete-ma
 
 也就是说，对于P和Q所有可能的真值， $P \Longrightarrow Q$ 和 $\neg P\vee Q$ 同真同假。我们写作：
 
-$$(P \Longrightarrow Q) \equiv (\neg P\vee Q)$$
+$$
+(P \Longrightarrow Q) \equiv (\neg P\vee Q)
+$$
 
 $P\Longrightarrow Q$ 是*数学定理(mathematical theorems)*采用的最常见的形式。下面是表述该蕴含的一些不同方式。
 
@@ -171,7 +173,9 @@ $P\Longrightarrow Q$ 是*数学定理(mathematical theorems)*采用的最常见�
 
 注意到 $P \Longrightarrow Q$ 与它的逆否命题在真值表中是同真同假的，所以它们是逻辑等价的：
 
-$$(P \Longrightarrow Q) \equiv \neg Q \Longrightarrow \neg P$$
+$$
+(P \Longrightarrow Q) \equiv \neg Q \Longrightarrow \neg P
+$$
 
 有许多同学可能会混淆逆命题与逆否命题，这里我们需要记住，原命题与其逆否命题是等价的，而与逆命题并不是等价的。
 
@@ -202,10 +206,14 @@ $$(P \Longrightarrow Q) \equiv \neg Q \Longrightarrow \neg P$$
 为了能够数学化地表示这些语句，我们需要两个**量词(quantifier)**：*全称量词(universal quantifier)* $\forall$ 和*存在量词(existential quantifier)* $\exists$ 。比如说：
 
 1. “一些哺乳动物会下蛋。”从数学的角度来看，“一些”表示“至少有一个”，所以这个语句是在说“存在一个哺乳动物x，x会下蛋”如果我们令全集U是所有的哺乳动物组成的集合，那么我们可以这样写： 
-    $$(\exists x \in U)(x\ lays\ eggs)$$
+    $$
+    (\exists x \in U)(x\ lays\ eggs)
+    $$
     - 有些时候，当全集比较清晰显然的时候，我们可以省略U，直接写 $\exists x (x\ lays\ eggs)$
 2. “对于所有的自然数n， $n^2 + n + 41$ 是质数”，将自然数集当作全集，则可以表示为：
-    $$(\forall n\in \mathbb{N})(n^2 + n + 41\ is\ prime)$$
+    $$
+    (\forall n\in \mathbb{N})(n^2 + n + 41\ is\ prime)
+    $$
 
 ## 有限全集下量词与析取合取的转化
 
@@ -213,9 +221,12 @@ $$(P \Longrightarrow Q) \equiv \neg Q \Longrightarrow \neg P$$
 
 比如说，如果我们的全集 $U = \\{1, 2, 3, 4\\}$，则
 
-$$(\exists x \in U)P(x) \equiv P(1)\vee P(2) \vee P(3) \vee P(4)$$
+$$
+(\exists x \in U)P(x) \equiv P(1)\vee P(2) \vee P(3) \vee P(4)
+$$
 
-$$(\forall x \in U)P(x) \equiv P(1) \wedge P(2) \wedge P(3) \wedge P(4)
+$$
+(\forall x \in U)P(x) \equiv P(1) \wedge P(2) \wedge P(3) \wedge P(4)
 $$
 
 不过，当全局是一个无限集的时候，比如说自然数集，这样的转化就没办法书写了。
@@ -258,9 +269,13 @@ $$
 
 首先，让我们看一下如何对合取与析取进行否定：
 
-$$\neg(P\wedge Q) \equiv (\neg P \vee \neg Q)$$
+$$
+\neg(P\wedge Q) \equiv (\neg P \vee \neg Q)
+$$
 
-$$\neg(P\vee Q) \equiv (\neg P\wedge \neg Q)$$
+$$
+\neg(P\vee Q) \equiv (\neg P\wedge \neg Q)
+$$
 
 这两个等价式被称为**德·摩根律(De Morgan's Laws)**，并且它们是十分符合我们的知觉的：比如说，如果 $P \wedge Q$ 不是真的，那么P和Q里面至少有一个是假的（反之亦然）。
 
@@ -279,9 +294,13 @@ $$\neg(P\vee Q) \equiv (\neg P\wedge \neg Q)$$
 
 后面两队语句同真同假其实并不是偶然，因为我们有如下的逻辑等价式：
 
-$$\neg(\forall x P(x)) \equiv \exists x \neg P(x) $$
+$$
+\neg(\forall x P(x)) \equiv \exists x \neg P(x)
+$$
 
-$$\neg(\exists x P(x)) \equiv \forall x \neg P(x) $$
+$$
+\neg(\exists x P(x)) \equiv \forall x \neg P(x)
+$$
 
 这两个逻辑等价式对于所有的全集上的命题P都是成立的（包括无限集）。
 
@@ -295,7 +314,9 @@ $$\neg(\exists x P(x)) \equiv \forall x \neg P(x) $$
 
 下面我们来看一个更复杂的例子，确定一个全集和命题式 $P(x, y)$ 。假设我们有命题 $\neg(\forall x \exists y P(x, y))$ 且我们想要将这个否定操作符放到量词里面，而不是放在最外面。根据上面的规律，我们可以这样操作：
 
-$$\neg(\forall x \exists y P(x, y)) \equiv \exists x \neg(\exists y P(x, y)) \equiv \exists x \forall y \neg P(x, y)$$
+$$
+\neg(\forall x \exists y P(x, y)) \equiv \exists x \neg(\exists y P(x, y)) \equiv \exists x \forall y \neg P(x, y)
+$$
 
 注意到我们通过让否定操作符在量词之间传播的方式，将复杂的否定转化成了一个规模更小的，更简单的问题。当然，传播的时候，量词需要“翻转”。
 
@@ -303,13 +324,17 @@ $$\neg(\forall x \exists y P(x, y)) \equiv \exists x \neg(\exists y P(x, y)) \eq
 
 先使用量词将语句“至少存在3个不同的整数x，满足P(x)”写成命题的形式。一种做法是：
 
-$$\exists x\exists y\exists z(x\ne y\wedge y\ne z\wedge z\ne x\wedge P(x)\wedge P(y)\wedge P(z))$$
+$$
+\exists x\exists y\exists z(x\ne y\wedge y\ne z\wedge z\ne x\wedge P(x)\wedge P(y)\wedge P(z))
+$$
 
 (这里，所有的量词都以整数集 $\mathbb{z}$ 为全集)
 
 现在我们再用量词将语句“**最多**有3个不同的整数x满足P(x)”写成命题的形式。一种做法是：
 
-$$\exists x\exists y\exists z\forall d (P(d) \Longrightarrow d = x \vee d = y \vee d = z)$$
+$$
+\exists x\exists y\exists z\forall d (P(d) \Longrightarrow d = x \vee d = y \vee d = z)
+$$
 
 下面是一种等价形式：
 
@@ -509,3 +534,4 @@ $$
 > - $\neg(\forall x P(x)) \equiv \exists x \neg P(x)$
 >
 > - $\neg(\exists x P(x)) \equiv \forall x \neg P(x)$
+

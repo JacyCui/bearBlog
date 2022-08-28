@@ -23,10 +23,14 @@ $$A = \{2, 3, 5, 7, 11\}$$
 如果两个集合A和B的元素相同，我们称这两个集合**相等(equal)**，写作 $A = B$ 。
 
 集合中元素的顺序以及重复性并不影响集合本身，所以：
-$$\{red, white, blue\} = \{blue, white, red\} = \{red, white, white, blue\}$$
+$$
+\{red, white, blue\} = \{blue, white, red\} = \{red, white, white, blue\}
+$$
 
 有时，一些复杂的集合我们会用一种不同的记号来表示。比如说所有有理数组成的集合，记为 $\mathbb{Q}$ ，可以写作
-$$\{\frac{a}{b} | a, b \in \mathbb{Z} \wedge b\ne 0\}$$
+$$
+\{\frac{a}{b} | a, b \in \mathbb{Z} \wedge b\ne 0\}
+$$
 其中， $\mathbb{Z}$ 表示整数集， $\wedge$ 表示且。这个表示方法读作“所有分子分母都是整数且分母不为0的分数组成的集合”。
 
 ## 集合的势
@@ -63,14 +67,19 @@ $$\{\frac{a}{b} | a, b \in \mathbb{Z} \wedge b\ne 0\}$$
 关于交集和并集，有如下的一些简单性质：
 
 - $A \cup B = B \cup A$
+
 - $A \cup \emptyset = A$
+
 - $A \cap B = B \cap A$
+
 - $A \cap \emptyset = \emptyset$
 
 ## 补集
 
 考虑集合A与集合B，所有在集合B中，但是不在集合A中的元素组成的集合为A在B中的**相对补集(relative complement)**，或者B和A的**差集(set difference)**，记作 $B - A$ 或者 $B \backslash A$ ： 
-$$B - A = \{x \in B | x \not\in A\}$$
+$$
+B - A = \{x \in B | x \not\in A\}
+$$
 
 比如说 $B = \\{1, 2, 3\\}, A =\\{3, 4, 5\\}$ ，则 $B - A = \\{1, 2\\}$ 。
 
@@ -79,34 +88,50 @@ $$B - A = \{x \in B | x \not\in A\}$$
 关于补集，有如下一些性质：
 
 - $A - A = \emptyset$
+
 - $A - \emptyset = A$
+
 - $\emptyset - A = \emptyset$
 
 ## 重要集合
 
 在数学中，有一些集合非常常用，所以我们会用一些特殊的符号表示它们，包括：
 - $\mathbb{N}$ 表示自然数集： $\\{0, 1, 2, 3, ...\\}$ ；
+
 - $\mathbb{Z}$ 表示整数集： $\\{..., -2, -1, 0, 1, 2, ...\\}$ ；
+
 - $\mathbb{Q}$ 表示有理数集： $\\{\frac{a}{b} | a, b \in \mathbb{z} \wedge b \ne 0\\}$ ；
+
 - $\mathbb{R}$ 表示实数集；
+
 - $\mathbb{C}$ 表示复数集。
 
 ## 积与幂集
 
 两个集合的**笛卡尔积(Cartesian product)**（也叫做**叉乘(cross product)**），写作 $A \times B$ ，指的是所有的A中的元素作为第一个部分，B中的元素作为第二个部分的有序对组成的集合。用集合表示法写作：
-$$A\times B = \{(a, b) | a \in A, b\in B\}$$
+$$
+A\times B = \{(a, b) | a \in A, b\in B\}
+$$
 
 比如说，若 $A = \\{1, 2, 3\\}, B = \\{u, v\\}$ ，则
-$$A\times B = \{(1, u), (1, v), (2, u), (2, v), (3, u), (3, v)\}$$
+$$
+A\times B = \{(1, u), (1, v), (2, u), (2, v), (3, u), (3, v)\}
+$$
 
 再比如说自然数集和自然数集的笛卡尔积就是所有的自然数有序对：
-$$\mathbb{N}\times\mathbb{N}=\{(0, 0), (1, 0), (0, 1), (1, 1), (2, 0), ...\}$$
+$$
+\mathbb{N}\times\mathbb{N}=\{(0, 0), (1, 0), (0, 1), (1, 1), (2, 0), ...\}
+$$
 
 给定一个集合S，S的**幂集(power set)**指的是S的所有的子集组成的集合，记为 $\mathcal{P}(S)$，集合记号表示为：
-$$\mathcal{P}(S) = \{T | T \subseteq S\}$$
+$$
+\mathcal{P}(S) = \{T | T \subseteq S\}
+$$
 
 例如，对于集合 $S = \\{1, 2, 3\\}$ ，其幂集为：
-$$\mathcal{P}(S) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\}, \{1, 2, 3\}\}$$
+$$
+\mathcal{P}(S) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\}, \{1, 2, 3\}\}
+$$
 
 幂集有一个性质，若 $|S| = k$ ，则 $|\mathcal{P}(S)| = 2^k$ ，其实就是在说势为k有限集的有 $2^k$ 个子集。
 
@@ -117,12 +142,16 @@ $$\mathcal{P}(S) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\
 在书写很多东西求和或者累积的时候，我们有一套比直接书写更加紧凑的表示法。比如说，写 $1 + 2 + ... + n$ ，不一定非得说“点点点”，我们可以更简单的写作 $\sum_{i = 1}^{n} i$。
 
 更一般地，求和符号的含义如下：
-$$f(m) + f(m + 1) + ... + f(n) = \sum_{i = m}^{n} f(i)$$
+$$
+f(m) + f(m + 1) + ... + f(n) = \sum_{i = m}^{n} f(i)
+$$
 
 例如， $\sum_{i = 5}^{n} = 5^2 + 6^2 + ... + n^2$ 。
 
 类似的，累积的符号定义如下：
-$$f(m)\cdot f(m + 1)\cdot ... \cdot f(n) = \prod_{i = m}^{n} f(i)$$
+$$
+f(m)\cdot f(m + 1)\cdot ... \cdot f(n) = \prod_{i = m}^{n} f(i)
+$$
 
 例如， $\prod_{i = 1}^{n} = 1\cdot 2\cdot ...\cdot n$ 就是前n个正整数的积。
 
@@ -131,7 +160,9 @@ $$f(m)\cdot f(m + 1)\cdot ... \cdot f(n) = \prod_{i = m}^{n} f(i)$$
 考虑语句：对于所有的自然数n， $n^2 + n + 41$ 是质数。这里，n的数量范围是自然数集 $\mathbb{N}$ 内的任意元素。
 
 用数学记号写作
-$$(\forall n \in \mathbb{N})(n^2 + n + 41\ is\ prime)$$
+$$
+(\forall n \in \mathbb{N})(n^2 + n + 41\ is\ prime)
+$$
 
 这里，我们使用了**全称量词(universal quantifier)** $\forall$ (<u>任意(for all)</u>)。
 
@@ -142,13 +173,16 @@ $$(\forall n \in \mathbb{N})(n^2 + n + 41\ is\ prime)$$
 但是，如果你思考得更深入一些，你会发现一些更大的n代入使得这个式子的值并不是质数。因此这句话其实是错的。
 
 和全称量词相对的，**存在量词(existential quantifier)** $\exists$(<u>存在(there exists)</u>) 可以被用在这样的语句中： 
-$$(\exists x \in \mathbb{Z})(x < 2\ and\ x^2 = 4)$$
+$$
+(\exists x \in \mathbb{Z})(x < 2\ and\ x^2 = 4)
+$$
 
 这个语句是说存在一个小于2的整数，其平方为4。这是一个真的语句，因为存在 $x = -2$ 满足 $x < 2$ 且 $x^2 = 4$。
 
 我们也可以写一些同时使用这两个量词的语句：
 
 1. $(\forall x \in \mathbb{Z})(\exists y \in \mathbb{Z})(y > x)$
+
 2. $(\exists y \in \mathbb{Z})(\forall x \in \mathbb{Z})(y > x)$
 
 第一条语句时是在说给定一个整数，我们总能找到一个更大的。第二条语句说了一件非常不同的事情：存在一个最大的整数。第一句话是真的，而第二句话是假的。因此，全称量词和存在量词的使用顺序会对语句表达的含义产生影响。
