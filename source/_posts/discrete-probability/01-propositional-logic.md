@@ -1,12 +1,12 @@
 ---
 title: 【离散数学与概率论-第1讲】命题逻辑
 description: 在这第一讲中，我们会从各种数学定理会采用的逻辑形式开始学习，同时我们还会学习如何处理这些逻辑形式，从而使得它们更容易去证明。
-abbrlink: 12290
+abbrlink: 58002
 keywards: discrete-mathematics-and-probability-theory
 tag: 离散数学与概率论
 mathjax: true
-date: 2022-08-27 15:17:22
 cover: https://res.cloudinary.com/cuijiacai/image/upload/v1661584594/discrete-mathematics/propositional-logic/proposition_fuxsnm.png
+date: 2022-08-27 15:17:22
 ---
 
 # 命题逻辑

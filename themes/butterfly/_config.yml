@@ -11,7 +11,7 @@ menu:
   #   音乐: /music/ || fas fa-music
   #   照片: /Gallery/ || fas fa-images
   #   电影: /movies/ || fas fa-video
-  # 友链: /link/ || fas fa-link
+  友链: /link/ || fas fa-link
   # 关于: /about/ || fas fa-heart
 
 
@@ -579,7 +579,7 @@ display_mode: light
 beautify:
   enable: true
   field: site # site/post
-  title-prefix-icon: '\f0c1'
+  title-prefix-icon:  '\f863' # '\f0c1'
   title-prefix-icon-color: '#F47466'
 
 # Global font settings
@@ -838,6 +838,7 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
+    - <link rel="stylesheet" href="/css/mycss/header.css">
   bottom:
     # - <script src="xxxx"></script>
 
