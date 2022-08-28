@@ -354,8 +354,6 @@ $$
 
 ## 命题
 
-### 题目
-
 将下面的文字表述转化成命题逻辑或者将命题逻辑转化成文字表述，并简要解释每个命题是真是假。
 
 1. 存在不是有理数的实数。
@@ -370,7 +368,7 @@ $$
 
 6. $(\forall x\in \mathbb{N})((x > 7) \Longrightarrow ((\exists a, b\in \mathbb{N})(a + b = x)))$
 
-### 解答
+{% hideToggle 解答 %}
 
 1. $(\exists x \in \mathbb{R})(x\in Q)$ ；这是真的，比如说 $\pi$ 。
 
@@ -384,9 +382,9 @@ $$
 
 6. 所有比7大的自然数都可以写成另外两个自然数加和的形式；这是真的，我们可以直接写成0加上这个自然数本身。
 
-## 真值表
+{% endhideToggle %}
 
-### 题目
+## 真值表
 
 通过列举真值表的方式判断下列逻辑等价式是否成立。
 
@@ -396,7 +394,7 @@ $$
 
 3. $(P\wedge Q)\vee R \equiv (P\vee R)\wedge (Q\vee R)$
 
-### 解答
+{% hideToggle 解答 %}
 
 1. 不等价，当P为真，Q为假的时候，等价式的左边为真，但右边为假。真值表略。
 
@@ -410,28 +408,27 @@ $$
 
 > 上面两个逻辑等价式也称为分配律。
 
+{% endhideToggle %}
+
 ## 必要条件和充分条件
 
-### 题目
+1. 给定蕴含式 $A \Longrightarrow B$，A是B的 ------ 条件。
 
-1. 给定蕴含式 $A \Longrightarrow B$，A是B的 <u>      </u> 条件。
+2. 给定蕴含式 $\neg A \Longrightarrow \neg B$，A是B的 ------ 条件。
 
-2. 给定蕴含式 $\neg A \Longrightarrow \neg B$，A是B的 <u>      </u> 条件。
+3. 给定蕴含式 $\neg B \Longrightarrow \neg A$，A是B的 ------ 条件。
 
-3. 给定蕴含式 $\neg B \Longrightarrow \neg A$，A是B的 <u>      </u> 条件。
+4. 给定蕴含式 $B \Longrightarrow A$，A是B的 ------ 条件。
 
-4. 给定蕴含式 $B \Longrightarrow A$，A是B的 <u>      </u> 条件。
-
-### 解答
+{% hideToggle 解答 %}
 
 1. 充分；
 2. 必要；
 3. 充分；
 4. 必要。
 
+{% endhideToggle %}
 ## 逻辑等价式
-
-### 题目
 
 判断下面的逻辑等价式是否成立并简要说明你的理由。
 
@@ -443,7 +440,7 @@ $$
 
 4. $\exists x(P(x)\wedge Q(x))\equiv\exists xP(x)\wedge\exists xQ(x)$
 
-### 解答
+{% hideToggle 解答 %}
 
 1. 正确，左边为真可以推出右边为真，右边为真也可以推出左边为真。
 
@@ -459,11 +456,11 @@ $$
 
 > 这两个正确的逻辑等价式最好记一下，合取关系可以分配全称量词，析取关系可以分配存在量词。
 
+{% endhideToggle %}
+
 # 作业题
 
 ## 蕴含
-
-### 题目
 
 无论P表示什么，下面哪些蕴含式是永真的？如果是永真的，请简要解释，如果不是，请给出反例。
 
@@ -473,7 +470,7 @@ $$
 
 3. $\exists x\forall y P(x,y) \Longrightarrow \forall y\exists x P(x,y)$ 。
 
-### 解答
+{% hideToggle 解答 %}
 
 1. 永真。
     - 两个相同的量词交换位置不影响命题的含义。
@@ -485,9 +482,8 @@ $$
 3. 永真。
     - 理由和2类似，右边的结论比左边的结论更弱，左边可以推导出右边。
 
+{% endhideToggle %}
 ## 含量词的等价式
-
-### 题目
 
 判断下表中左边的命题和右边的命题是否在逻辑上是等价的，并简要说明你的答案。
 
@@ -497,8 +493,7 @@ $$
 |2| $\neg\exists x\forall y(P(x,y)\Longrightarrow\neg Q(x,y))$ | $\forall x((\exists yP(x,y)) \wedge (\exists y Q(x,y)))$ |
 |3| $\forall x\exists y(P(x)\Longrightarrow Q(x,y))$ | $\forall x(P(x) \Longrightarrow (\exists yQ(x,y)))$ |
 
-
-### 解答
+{% hideToggle 解答 %}
 
 1. 不等价。
     - 命题1 $\equiv \forall x(\neg(\exists yQ(x,y))\vee P(x)) \equiv\forall x((\forall y\neg Q(x,y))\vee P(x))$ ；
@@ -535,3 +530,8 @@ $$
 >
 > - $\neg(\exists x P(x)) \equiv \forall x \neg P(x)$
 
+{% endhideToggle %}
+
+{% note green 'fas fa-check' flat %}
+恭喜完成离散数学与概率论第1讲所有内容的学习！
+{% endnote %}
