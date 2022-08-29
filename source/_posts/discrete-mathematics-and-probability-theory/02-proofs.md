@@ -60,7 +60,7 @@ cover: https://res.cloudinary.com/cuijiacai/image/upload/v1661665935/discrete-ma
 
 在这一讲当中，我们会使用到如下的一些数学记号和基本事实：
 
-- 用 $\mathbb{Z}$ 表示整数集，也就是说 $\mathbb{Z} = \\{..., -2, -1, 0, 1, 2, ...\\}$ ；用 $\mathbb{N}$ 表示自然数集， 也就是 $\mathbb{N} = \\{0, 1, 2, ...\\}$ 。
+- 用 $\mathbb{Z}$ 表示整数集，也就是说 $\mathbb{Z} = \{..., -2, -1, 0, 1, 2, ...\}$ ；用 $\mathbb{N}$ 表示自然数集， 也就是 $\mathbb{N} = \{0, 1, 2, ...\}$ 。
 
 - 两个整数的和与积是一个整数，也就是说整数集对于加法与乘法运算*封闭(closed)*；自然数集同样也对于加法和乘法运算封闭。
 
@@ -146,7 +146,7 @@ $$
 (\forall n\in\mathbb{Z}^{+})((n < 1000) \Longrightarrow (sum\ of\ n's\ digits\ divisible\ by\ 9 \Longrightarrow n\ divisible\ by\ 9))
 $$
 
-这里， $\mathbb{Z}^+$ 表示正整数集 $\\{1, 2, ...\\}$。
+这里， $\mathbb{Z}^+$ 表示正整数集 $\{1, 2, ...\}$。
 
 现在，证明的过程和之前类似：
 - 我们从假设开始，假设一个一般的，各数位和被9整除的整数n；
