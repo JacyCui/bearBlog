@@ -542,7 +542,9 @@ $$x=2x$$
 3. 最后，你应该记住这一讲的重点并不是我们证明的几个特定的语句，而是这些不同的证明策略，以及它们的逻辑结构。
     - 请确保你清楚地理解了它们，你将会在你后续的各种练习题（当然，我们没有考试，这只是一个教程，不是一个正式的大学课程）的证明当中用到它们。
 
-# 习题
+> 后面的习题解答为了节省时间，我就稍微简略一点写了，如果哪个步骤不清楚的可以在评论区问。
+
+# 练习题
 
 ## 证明一般化的定理2.2
 
@@ -552,7 +554,30 @@ $$x=2x$$
 > $$n = \sum_{i=0}^{k-1} a_i\cdot 10^i$$
 
 {% hideToggle 解答 %}
-<!-- Solution Here -->
+
+证明：
+
+先证明一个引理：$\forall i \in\mathbb{N}, 9|10^{i} - 1$。
+$$
+10^{i} - 1 = (10 - 1)(10^{i-1} + 10^{i - 2} + ... + 10 + 1) = 9 \sum_{j=0}^{i-1} 10^j
+$$
+其中，$\sum_{j=0}^{i-1} 10^j \in\mathbb{N}$，所以 $9 | 10^i - 1$。
+
+> 注：任何数都整除0。
+
+记十进制表示下的k位数 $n = \overline{a_{k-1}a_{k-2}...a_2a_1a_0}$，则有
+$$
+n = \sum_{i=0}^{k-1} a_i\cdot 10^i = \sum_{i=0}^{k-1} a_i + \sum_{i=0}^{k-1} a_i\cdot (10^i - 1)
+$$
+
+而 $9 | \sum_{i=0}^{k-1} a_i$（已知条件） 且 $9 | 10^i - 1$ （已证引理） ，于是由定理2.1，我们有
+
+$$
+9 | (\sum_{i=0}^{k-1} a_i + \sum_{i=0}^{k-1} a_i\cdot (10^i - 1))
+$$
+
+即 $9 | n$ 。 $\square$
+
 {% endhideToggle %}
 ## 证明引理2.2
 
@@ -561,11 +586,186 @@ $$x=2x$$
 > 提示：首先尝试直接证明，然后尝试证明逆否命题。哪一种证明方法更适合这个引理？
 
 {% hideToggle 解答 %}
-<!-- Solution Here -->
+
+这一题适合通过逆否命题来证明。
+
+证明：原命题的逆否命题为“若 $a$ 是奇数，则 $a^2$ 也是奇数。”
+不妨设 $a = 2k+1$ ，于是 $a^2 = (2k+1)^2 = 4k(k+1) + 1$ 也是奇数。
+逆否命题成立，原命题成立。 $\square$
 {% endhideToggle %}
 
+## 证明或证伪
+
+对于下面的每个命题，证明其为真或者通过找反例的方式证明其为假。
+
+1. $(\forall x\in\mathbb{N})(n\ is\ odd\Longrightarrow n^2 + 4n\ is\ odd)$。
+2. $(\forall a,b\in\mathbb{R})(a+b\le 15 \Longrightarrow (a\le 11\vee b\le 4))$。
+3. $(\forall r\in\mathbb{R})(r^2\ is\ irrational\Longrightarrow r\ is\ irrational)$。
+4. $(\forall n\in\mathbb{Z}^+)(5n^3>n!)$。（注： $\mathbb{Z}^+$ 表示正整数集）
+
+{% hideToggle 解答 %}
+
+1. 真。
+证明：$n$ 是奇数，不妨设 $n = 2k+1, k\in\mathbb{N}$ ，则
+$$n^2 + 4n = (2k+1)^2 + 4(2k+1) = 4(k^2 + 3k + 1) + 1$$
+于是 $n^2 + 4n$ 为奇数。 $\square$
+
+2. 真。
+证明：反证法。
+若 $a > 11 \wedge b > 4$ ， 则 $a + b > 11 + 4 = 15$ 与 $a + b \le 15$ 矛盾。 $\square$
+
+3. 真。
+证明：反证法。
+若 $r\in\mathbb{Q}$，不妨设 $r = \frac{q}{p}$ ， $p,q\in\mathbb{Z}$ ， $(p,q) = 1$ ， 则
+$$ r^2 = \frac{q^2}{p^2}, q^2\in\mathbb{Z}, p^2\in\mathbb{Z}$$
+于是 $r^2\in\mathbb{Q}$ ， 与 $r^2\not\in\mathbb{Q}$ 矛盾。 $\square$
+{% endhideToggle %}
+
+4. 假。反例：取 $n = 7$ ， 则 $5n^3 = 1715 < 5040 = n!$ 。
+
+## 费马矛盾
+
+求证对于任意整数 $n > 3$ ， $2^{\frac1n}$ 不是有理数。
+
+> 提示：使用**费马大定理(Fermat’s Last Theorem)**——$\nexists a,b,c\in\mathbb{Z}^+ s.t. a^n + b^n = c^n (n\ge 3)$
+
+{% hideToggle 解答 %}
+
+证明：反证法。
+若 $2^{\frac1n}$ 是有理数， 记为 $2^{\frac1n} = \frac{q}p (p,q\in\mathbb{Z}^+ \wedge (p,q) = 1)$ ，于是
+$$
+2^{\frac1n} = \frac{q}p \Leftrightarrow 2 = \frac{q^n}{p^n} \Leftrightarrow q^n = p^n + p^n
+$$
+这与费马大定理是矛盾的。 $\square$
+
+{% endhideToggle %}
+
+## 鸽笼原理
+
+求证：将 $n + 1$ 个球放到 $n$ 个盒子里，无论怎么放，至少有一个盒子里会有两个球。
+
+{% hideToggle 解答 %}
+证明：反证法。
+若每个盒子都最多只有1个球，那么 $n$ 个盒子一共最多能放 $n$ 个球，这与我们放入了 $n + 1$ 个球是矛盾的。 $\square$
+{% endhideToggle %}
+
+## 朋友个数
+
+求证：如果聚会上有 n (n > 2) 个人，至少有两个人在聚会上的朋友数量是一样的。假设朋友关系是相互的，即如果熊桑是蜜蜂的朋友，那么蜜蜂也是熊桑的朋友。
+
+> 提示：鸽笼原理告诉我们，如果将n个东西放进m个容器里面，且 n > m，那么至少有一个容器里面有不止一个东西。你可以直接用这个定理，不需要重新书写证明。
+
+{% hideToggle 解答 %}
+证明：考虑到聚会上一共有 n 个人，所以每个人最多只能有 n - 1 个朋友。将聚会上每个人的朋友数量视为鸽笼，则我们最多有“0个朋友、1个朋友、2个朋友、...、n - 1个朋友”这n个笼子。
+
+将参加聚会的每个人视为鸽子，则我们需要将这n个鸽子放到n个鸽笼里面。
+
+但是，我们发现“0个朋友”与“n-1个朋友”这两个鸽笼里面不能同时有鸽子，因为它们互相矛盾。
+
+> 如果有人有0个朋友，就不可能有人有n-1个朋友；如果有人有n-1个朋友，就不可能有人有0个朋友。
+
+因此，我们实际上只有n-1个能用鸽笼，也就是说，我们其实需要将n个鸽子放到n-1个鸽笼里面。
+
+根据鸽笼原理，至少有一个笼子里不止一个鸽子，于是这个鸽笼中的两只鸽子对应的人的朋友数量相同。
+
+也就是说，聚会上至少有两个人的朋友数量是一样的。 $\square$
+
+{% endhideToggle %}
+
+# 作业题
+
+## 集合操作保留
+
+对于一个函数 $f$ ，定义集合 $X$ 的**像(image)**为集合 $f(X) = \{y|y=f(x), x\in X\}$ 。
+
+定义集合 $Y$ 的**原像(inverse image / preimage)**为集合 $f^{-1}(Y) = \{x|f(x) \in Y\}$ 。
+
+证明下面的4句话，其中 $A$ 和 $B$ 都是集合。
+
+1. $f^{-1}(A\cap B) = f^{-1}(A)\cap f^{-1}(B)$。
+2. $f^{-1}(A - B) = f^{-1}(A) - f^{-1}(B)$。
+3. $f(A\cap B)\subseteq f(A)\cap f(B)$ 并给出等号不成立的例子。
+4. $f(A - B) \supseteq f(A) - f(B)$ 并给出等号不成立的例子。
+
+通过这几句话你会发现，原像是可以保留集合操作的，而像不可以。（这是由函数的性质决定的）
+
+> 回忆：对于集合 $X$ 和 $Y$ ， $X = Y$ 当且仅当 $X \subseteq Y \wedge Y\subseteq X$ 。
+> 要证 $X \subseteq Y$ ， 只需证 $(\forall x)(x\in X \Longrightarrow x\in Y)$。
+
+{% hideToggle 解答 %}
+
+1. 证明：任取 $x\in f^{-1}(A\cap B)$ ，有 
+    $$
+    f(x)\in A\cap B \Rightarrow f(x) \in A \wedge f(x) \in B \Rightarrow x\in f^{-1}(A) \wedge x\in f^{-1}(B)
+    $$
+    即 $x\in f^{-1}(A) \cap f^{-1}(B)$ ，于是 $f^{-1}(A\cap B) \subseteq f^{-1}(A)\cap f^{-1}(B)$。
+    任取 $x\in f^{-1}(A) \cap f^{-1}(B)$ ，有
+    $$
+    x \in f^{-1}(A) \wedge x\in f^{-1}(B) \Rightarrow f(x) \in A \wedge f(x) \in B \Rightarrow f(x) \in A\cap B
+    $$
+    即 $x\in f^{-1}(A\cap B)$ ，于是 $f^{-1}(A)\cap f^{-1}(B) \subseteq f^{-1}(A\cap B)$。
+    综上，$f^{-1}(A\cap B) = f^{-1}(A)\cap f^{-1}(B)$ 。 $\square$
+
+2. 证明：（详细的过程和1类似，这里我就简略地写了）
+    $$
+    x \in f^{-1}(A - B) \equiv f(x) \in A - B \equiv f(x) \in A \wedge f(x)\not\in B
+    $$
+    $$
+    \equiv x \in f^{-1}(A) \wedge x\notin f^{-1}(B) \equiv x \in f^{-1}(A) - f^{-1}(B)
+    $$
+    $\therefore f^{-1}(A - B) = f^{-1}(A) - f^{-1}(B)$ 。 $\square$
+
+3. 证明：任取 $y\in f(A\cap B)$ ，有
+    $$
+    \exists x \in A\cap B, y = f(x) \Rightarrow \exists x \in A, y = f(x) \wedge \exists x \in B, y = f(x)$$
+    $$
+    \Rightarrow y\in f(A) \wedge y\in f(B)
+    $$
+    即 $y\in f(A) \cap f(B)$ ，于是 $f(A\cap B)\subseteq f(A)\cap f(B)$。
+    等号取不到的例子：
+    考虑 $a\in A, b\in B$ 满足 $f(a) = f(b)$ ，但 $A \cap B = \emptyset$ 的时候，$f(a) = f(b) \in f(A) \cap f(B)$，但 $f(A\cap B) = \emptyset$ 。
+
+4. 证明：任取 $y\in f(A) - f(B)$ ，有
+    $$
+    y \in f(A) \wedge y \notin f(B) \Rightarrow \exists x \in A, y = f(x) \wedge \nexists x \in B, y = f(x)
+    $$
+    $$
+    \Rightarrow \exists x \in A - B, y = f(x)
+    $$
+    即 $y\in f(A - B)$ ，于是 $f(A) - f(B)\subseteq f(A - B)$ 。 $\square$
+    等号取不到的例子：
+    考虑 $B = \{0\}, A = \{0,1\}, f(1) = f(0) = 0$ 的情况。我们有 $A - B = \{1\}$ ，则 $f(A - B) = \{0\}$ ，而 $f(A) = f(B) = \{0\}$ ， $f(A) - f(B) = \emptyset$ 。
+
+{% endhideToggle %}
+
+## 鹅卵石
+
+假设你有一个长方形的鹅卵石阵列（就像广播体操的方阵一样，摆成几行几列），这些鹅卵石要么是红的，要么是蓝的。假设无论你以何种方式，从每一列中拿走一个鹅卵石，你拿走的鹅卵石当中一定有一个红色的。求证：一定存在某一列鹅卵石全部是红色的。
+
+{% hideToggle 解答 %}
+
+证明：考虑逆否命题。如果不存在任何一列鹅卵石是全红色的，即每一列都至少有一个蓝色的鹅卵石。那么我从每一列当中拿走一个蓝色的鹅卵石，拿走的鹅卵石当中一个红色的都没有。逆否命题成立，原命题成立。
+
+> 注：原命题中的“无论以何种方式”相当于全称量词，其逆否命题中“从每一列拿走一个蓝色”相当于存在量词。
+
+{% endhideToggle %}
+
+## 逆否命题
+
+求证：$x + y < z + w \Longrightarrow x < z  \vee y < w$。（用直接证明和逆否证明两种方式证明）
+
+{% hideToggle 解答 %}
+
+1. 直接证明。
+证明：若 $x < z$ ，则结论已然成立；若 $x \ge z$ ， 则 $y < w + (z - x) \le w + 0 = w$ ，结论依然成立。综上，原命题为真。 $\square$
+> 这里用到了“proof by case”的技巧，数学上常用的分类讨论思想。
+
+2. 逆否证明。
+证明：考虑逆否命题。如果 $x \ge z \vee y\ge w$ ，我们有 $x + y \ge z + w$。 逆否命题为真，原命题为真。 $\square$
+
+{% endhideToggle %}
 
 {% note green 'fas fa-check' flat %}
 恭喜完成离散数学与概率论第2讲《证明》所有内容的学习！
-> 注：本讲的习题与解答还未不完全，后续会补全。
 {% endnote %}
+
