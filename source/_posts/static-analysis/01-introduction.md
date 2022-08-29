@@ -5,8 +5,8 @@ keywards: static-analysis
 tag: 静态分析
 mathjax: true
 date: 2022-08-29 14:45:22
-description:
-cover:
+description: 静态分析的概念和基本过程的介绍，是这个系列的第1讲
+cover: https://res.cloudinary.com/cuijiacai/image/upload/v1661770252/static-analysis/introduction/cover_c0aixs.png
 ---
 
 
