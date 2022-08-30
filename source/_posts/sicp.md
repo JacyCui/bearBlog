@@ -43,6 +43,7 @@ date: 2022-08-30 20:12:22
 |27|Aggregation<br/>{% btn '/404',video,fas fa-video, %}<br/>{% btn 'https://github.com/JacyCui/sicp-lectures/tree/main/lec27',materials,fas fa-book,blue %}||HW09: SQL<br/>{% btn '/404',video,fas fa-video, %}<br/>{% btn 'https://github.com/JacyCui/sicp-hw09.git',materials,fas fa-book,blue %}|
 |28|Tail Calls<br/>{% btn '/404',video,fas fa-video, %}<br/>{% btn 'https://github.com/JacyCui/sicp-lectures/tree/main/lec28',materials,fas fa-book,blue %}|Lab 13: More SQL<br/>{% btn '/404',video,fas fa-video, %}<br/>{% btn 'https://github.com/JacyCui/sicp-lab13.git',materials,fas fa-book,blue %}||
 |29|Macros<br/>{% btn '/404',video,fas fa-video, %}<br/>{% btn 'https://github.com/JacyCui/sicp-lectures/tree/main/lec29',materials,fas fa-book,blue %}|Lab 14: Final Review<br/>{% btn '/404',video,fas fa-video, %}<br/>{% btn 'https://github.com/JacyCui/sicp-lab14.git',materials,fas fa-book,blue %}||
+|30|Summary<br/>{% btn '/404',video,fas fa-video, %}<br/>{% btn '/404',materials,fas fa-book, %}||Congratulations!|
 
 > 未完待续
 
