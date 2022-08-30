@@ -2,8 +2,7 @@
 title: 计算机程序的构造与解释
 description: SICP(Python版)的学习地图，一本上帝的编程书，包含了学习SICP的一张完整的进程和资料表
 abbrlink: 45689
-cover: >-
-  https://res.cloudinary.com/cuijiacai/image/upload/v1660456387/blog/blog-building/personal-blog_j6fpfh.jpg
+cover: https://res.cloudinary.com/cuijiacai/image/upload/v1661861378/blog/sicp/cover_nvf1kb.png
 keywards: SICP
 tag: 编程学习资料
 date: 2022-08-30 20:12:22
