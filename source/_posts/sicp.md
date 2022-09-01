@@ -6,6 +6,7 @@ cover: https://res.cloudinary.com/cuijiacai/image/upload/v1661861378/blog/sicp/c
 keywards: SICP
 tag: 编程学习资料
 date: 2022-08-30 20:12:22
+sticky: 1
 ---
 
 > 这个系列还没有更完，等全部更完了之后再来完善这篇博文。
