@@ -488,18 +488,265 @@ $$
 
 {% hideToggle 定理3.8证明 %}
 
-证明：对马的数量 $n$ 进行归纳。用 $P(n)$ 表示
+证明：对马的数量 $n$ 进行归纳。用 $P(n)$ 表示我们想证明的主张。
 
-基础情况(n = 2)：因为2是质数，$P(2)$ 显然成立。
+基础情况(n = 1)：$P(1)$ 显然正确，因为如果集合中只有一匹马，那么集合中所有的马的颜色肯定相同。
 
-归纳假设：对于 $2 \le n \le k$ ， $P(n)$ 成立。
+归纳假设：对于某个任意的 $n\ge 1$ ， $P(n)$ 成立。
 
-归纳步骤：下面证明 $P(k+1)$ 成立。分两种情况，
-
-- $k + 1$ 为质数，则 $P(k+1)$ 显然成立。
-- $k + 1$ 不是质数，则 $\exists x,y\in\mathbb{N}, 2 \le x,y \le k, k + 1 = xy$，由归纳假设有 $P(x)\wedge P(y)$ ，而 $k + 1 = xy$ ，于是 $P(k+1)$ 成立。 
+归纳步骤：给定一个有 $n + 1$ 只马的集合 $\{h_1, h_2, ..., h_n+1\}$ ，我们可以排除第 $n + 1$ 只马，对前 $n$ 只马 $\{h_1, h_2, ..., h_n\}$ 应用归纳假设，推导出它们具有相同的颜色。同理，我们也可以推导出 $\{h_2, h_3, ..., h_{n+1}\}$ 也具有相同的颜色。由于“中间”的马 $\{h_2, h_3, ..., h_n\}$ 同时属于上述的两个集合，所以他们和 $h_1$ 以及 $h_{n+1}$ 的颜色相同。 从而，这 $n + 1$ 只马都具有相同的颜色。
 
 综上，由归纳原理，原命题成立。 $\square$
+{% endhideToggle %}
+
+显然，所有的马具有相同的颜色是不对的。所以，我们到底哪儿错了呢？回忆一下，为了能够应用归纳原则，在归纳步骤中，我们必须证明 $\forall n\ge 1, P(n)\Longrightarrow P(n+1)$ 。而在上面的那个证明过程中，这一步是错的——特别的，存在一个 $n$ 产生了反例。
+
+> 练习：对于哪个 $n$ 来说， $P(n)\Longrightarrow P(n+1)$ 是假的呢？（提示：考虑在证明中所提到的“中间”的马的关键性质。）
+
+# 练习题
+
+## 平方序列的和
+
+求证：$\forall n\in\mathbb{N}, 0^2 + 1^2 + 2^2 + 3^2 + ... + n^2 = \frac16n(n+1)(2n+1)$ 。
+
+{% hideToggle 解答 %}
+
+证明：对 $n$ 进行归纳。
+
+基础情况（ $n = 0$ ）：前0项的和为 $0^2 = 0 = \frac16\cdot 0\cdot(0+1)\cdot(2\cdot 0+1)$ 成立。
+
+归纳假设：假设对于 $n = k \ge 0$ 时，结论成立。
+
+归纳步骤：下面证明 $n = k + 1$ 时，结论成立。
+$$
+\sum_{i=0}^{k+1}i^2 = \sum_{i=0}^{k}i^2 + (k+1)^2 = \frac16k(k+1)(2k+1) + (k+1)^2
+$$
+$$
+=\frac16(k+1)(k(2k+1) + 6(k+1))= \frac16(k+1)(k+2)(2k+3)
+$$
+
+综上，根据归纳原则，原命题成立。
+
+{% endhideToggle %}
+## 伯努利不等式
+
+在实际分析中，**伯努利不等式(Bernoulli's Ine)**是一个用于逼近 $(1+x)$ 的指数的不等式。求证这个不等式： 
+$$
+n\in\mathbb{N}\wedge 1+x>0\Longrightarrow (1+x)^n\ge 1+nx
+$$
+
+{% hideToggle 解答 %}
+
+证明：对 $n$ 进行归纳。
+
+基础情况（ $n = 0$ ）： $(1 +x)^0 \ge 1 + 0\cdot x$ 显然成立。
+
+归纳假设：假设 $n = k$ 时， $(1+x)^k\ge 1+kx$。
+
+归纳步骤：$n = k + 1$ 时，有
+$$
+(1+x)^{k+1} = (1+x)^k(1+x) \ge (1+kx)(1+x)
+$$
+$$
+= 1+(k+1)x + kx^2 \ge 1 + (k+1)x
+$$
+
+综上，根据归纳假设，原命题成立。 $\square$
+
+{% endhideToggle %}
+
+## 阶乘
+
+一个常见的递归定义的函数是*阶乘(factorial)*，对于一个非负整数 $n$ ，定义 $n! = n(n-1)(n-2)...1$ ，基础情况为 $0! = 1$ 。下面让我们通过证明一个关于阶乘的不等式来强化一下我们对于归纳法和递归之间联系的理解。
+$$
+\forall n\in\mathbb{N}, n > 1 \Longrightarrow n! < n^n
+$$
+使用数学归纳法证明上述命题。（提示：在归纳步骤中，将 $(n+1)!$ 写成 $(n+1)\cdot n!$ 并使用归纳假设。）
+
+{% hideToggle 解答 %}
+
+证明：对 $n$ 进行归纳。
+
+基础情况（ $n = 2$ ）： $2! = 2 < 4 = 2^2$ 显然成立。
+
+归纳假设：假设 $n = k$ 时， $k! < k^k$ 。
+
+归纳步骤：当 $n = k + 1$ 时，
+$$
+(k+1)! = (k+1)\cdot k! < (k+1)\cdot k^k < (k+1)\cdot (k+1) ^ k = (k+1)^{k+1}
+$$
+
+综上，根据归纳原则，原命题成立。 $\square$
+
+{% endhideToggle %}
+
+## 名人问题
+
+聚会上的*名人(celebrity)*指的是其他所有人都认识TA但TA不认识任何人的人。假设你在一个有 $n$ 人的聚会上。对于聚会上的任意两个人 $A$ 和 $B$ ，你可以问 $A$ TA是否认识 $B$ 并得到一个诚实回答。给出一个递归的算法，通过问最多 $3n-4$ 个问题，判断聚会上是否存在一个名人，并且如果有的话是谁。
+
+> 注意：为了解决这个问题，你所能做的操作只是问聚会上的人问题。你所要得到的结果就是是否有名人参加聚会。
+
+用归纳法证明你的算法总是能正确的识别一个名人，如果聚会上有的话。并且你的算法最多只会问 $3n-4$ 个问题。
+
+{% hideToggle 解答 %}
+设计算法：
+![find-celebrity](https://res.cloudinary.com/cuijiacai/image/upload/v1662042365/discrete-mathematics/induction/find-celebrity_baau5x.png)
+
+<!--
+    \begin{algorithm}
+    \caption{Find-Celebrity}
+    \begin{algorithmic}
+    \REQUIRE $n(n \ge 2)$ people, denoted by $1, 2, ..., n$, we can ask $i$ to find whether $i$ knows $j$.
+    \ENSURE Either the celebrity $p$ is returned, or "No Celebrity" is returned.
+    \STATE \COMMENT{This recursive sub-procedure will return the only one potential celebrity $p$ from $1$ to $k$,}
+    \STATE \COMMENT{which means that the other $k-1$ people $1, 2, ..., p-1, p+1, ..., k$ is definitely not a celebrity, }
+    \STATE \COMMENT{as well as a fact that $q$ knows $p$ or $p$ doesn't know $q$.}
+    \PROCEDURE{FindPotentialCelebrity}{$k$}
+        \IF{$n=2$}
+            \STATE \COMMENT{Key Fact: One question is enough to eliminate a potential celebrity from two candidates. }
+            \IF{ask to find $1$ knows $2$}
+                \RETURN $2$, $1$ knows $2$
+            \ELSE
+                \RETURN $1$, $1$ doesn't know $2$
+            \ENDIF
+        \ENDIF
+        \STATE $p, fact :=$ \CALL{FindPotentialCelebrity}{$k - 1$}
+        \IF{ask to find $p$ knows $k$}
+            \RETURN $k$, $p$ knows $k$
+        \ELSE
+            \RETURN $p$, $p$ doesn't know $k$
+        \ENDIF
+    \ENDPROCEDURE
+    \STATE
+    \STATE \COMMENT{Get the only potential celebrity from $1, 2, ..., n$ with $n - 1$ questions in total, }
+    \STATE \COMMENT{as well as a fact to help us reduce a question asked in the process below. }
+    \STATE $p, fact :=$ \CALL{FindPotentialCelebrity}{$n$}
+    \STATE
+    \STATE \COMMENT{Check whether the potential celebrite $p$ is really a celebrity with $2(n - 1) - 1 = 2n-3$ questions in total}
+    \IF{$fact$ \textbf{is} $q$ knows $p$}
+        \FOR{$i := 1$ \TO $n$ \textbf{except} $p$}
+            \STATE \COMMENT{Ask $n - 2$ questions to ensure that all the other people knows $p$,}
+            \STATE \COMMENT{$n - 1$ questions to ensure that $p$ knows nobody.}
+            \IF{($i \ne q$ \AND ask to find $i$ doesn't know $q$) \OR ask to find $p$ knows $i$}
+                \RETURN "No Celebrity"
+            \ENDIF
+        \ENDFOR
+    \ENDIF
+    \IF{$fact$ \textbf{is} $p$ doesn't know $q$}
+        \FOR{$i := 1$ \TO $n$ \textbf{except} $p$}
+            \STATE \COMMENT{Ask $n - 1$ questions to ensure that all the other people knows $p$,}
+            \STATE \COMMENT{$n - 2$ questions to ensure that $p$ knows nobody.}
+            \IF{ask to find $i$ doesn't know $q$ \OR ($i \ne q$ \AND ask to find $p$ knows $i$)}
+                \RETURN "No Celebrity"
+            \ENDIF
+        \ENDFOR
+    \ENDIF
+    \RETURN $p$
+    \end{algorithmic}
+    \end{algorithm}
+-->
+
+证明：
+
+首先证明一个引理：聚会上最多只有1个名人。
+反证法，假设有2个名人 $i$ 和 $j$。 $i$ 是名人可知 $i$ 不认识 $j$ ，由 $j$ 是名人说明 $i$ 认识 $j$ ，矛盾，引理证毕。
+
+下面证明递归部分 `FindPotentialCelebrity(n)` 能够返回唯一有可能是名人的人，且只使用 $n - 1$ 个问题。
+
+对 $n$ 进行归纳。
+
+基础情况（ $n = 2$ ）：根据算法第7到10行，我们只问了1个问题 —— 1是否认识2：
+    - 如果1认识2，那么1一定不是名人，返回有可能是名人的2；
+    - 如果1不认识2，那么2一定不是名人，返回有可能是名人的1；
+所以，基础情况成立。
+
+归纳假设：假设 `FindPotentialCelebrity(k - 1)` ( $k\ge3$ )返回前 $k - 1$ 个人中唯一可能是名人的人，且只使用了 $k - 2$ 个问题。
+
+归纳步骤：下面证明 `FindPotentialCelebrity(k)` 的正确性。
+在算法第11行以及归纳假设，我们正确选取了前 $k - 1$ 个人中唯一有可能是名人的人 $p$ ，花了 $k - 2$ 个问题。
+在算法第12到15行，问了一个问题：$p$ 是否认识 $k$。
+- 如果 $p$ 认识 $k$ ，那么 $p$ 一定不是名人，返回 $k$ ；
+- 如果 $p$ 不认识 $k$ ，那么 $k$ 一定不是名人，返回 $p$ 。
+因此，`FindPotentialCelebrity(k)` 成功返回了前 $k$ 个人中唯一可能是名人的人，并且只问了 $k - 2 + 1 = k - 1$ 个问题。
+
+综上，根据归纳原理，`FindPotentialCelebrity(n)` 成功用 $n - 1$ 次比较找到了 $n$ 个人中唯一有可能是名人的那个人 $p$ 。
+
+之后，算法的第22到33行的检查确保了 $p$ 不认识其他 $n - 1$ 个人中的任何一个并且其他 $n - 1$ 个人都认识 $p$ 。这原本应该是最多需要 $2n-2$ 次比较的，但是由于在计算 `FindPotentialCelebrity(n)` 的时候已经问过了一个问题，所以这个问题我们就不用再重复问了，因此确认 $p$ 是否真的是名人的步骤最多只需要 $2n - 3$ 次询问。
+
+再加上前面寻找潜在名人的 $n - 1$ 次询问，我们一共最多只需要 $n - 1 + 2n-3 = 3n-4$ 次询问。（最多是因为如果我们在检查的时候发现了 $p$ 不是名人，那么算法会直接返回不存在，后续的检查不会执行，也就不会问更多的问题了）
+
+综上所述，我们的算法能够正确找到聚会上的名人或者告诉我们聚会上没有名人，并且最多只需要问 $3n-4$ 个问题。
+
+{% endhideToggle %}
+
+## 邮票兑换
+
+借助定理3.6的证明来设计一个算法，给定任意的至少12分的面值，输出可以凑成这个面值的4分和5分邮票的数量。你的算法最多会使用多少张5分的邮票呢？
+
+{% hideToggle 解答 %}
+设计算法：
+
+![postage-makeup](https://res.cloudinary.com/cuijiacai/image/upload/v1662048080/discrete-mathematics/induction/postage-makeup_aeefd1.png)
+
+<!--
+    \begin{algorithm}
+    \caption{Postage-MakeUp}
+    \begin{algorithmic}
+    \INPUT The postagte $n(n\ge 12)$ that you want to make up using 4c stamps and 5c stamps.
+    \OUTPUT The number of 4c stamps $x$ and 5c stamps $y$ needed to make up $n$, thus $n = 4x + 5y$.
+    \PROCEDURE{MakeUp}{$n$}
+        \STATE \COMMENT{Base Cases: n = 12, 13, 14, 15}
+        \IF{$n=12$}
+            \RETURN $3,0$
+        \ENDIF
+        \IF{$n=13$}
+            \RETURN $2,1$
+        \ENDIF
+        \IF{$n=14$}
+            \RETURN $1,2$
+        \ENDIF
+        \IF{$n=15$}
+            \RETURN $0,3$
+        \ENDIF
+        \STATE \COMMENT{Recursive Call}
+        \STATE $x,y :=$ \CALL{MakeUp}{$n - 4$}
+        \STATE \COMMENT{$4(x+1) + 5y = 4x + 5y + 4 = n - 4 + 4 = n$}
+        \RETURN $x + 1, y$
+    \ENDPROCEDURE
+    \end{algorithmic}
+    \end{algorithm}
+-->
+
+考虑合成 $n$ 的时候我们的算法需要的5分邮票张数为 $f(n)$ ，由算法第12到14行可知 $f(n) = f(n - 4)$ ，于是我们有
+$$
+f(n) = 
+\begin{cases}
+0, n \equiv 0 \mod 4 \\
+1, n \equiv 1 \mod 4 \\
+2, n \equiv 2 \mod 4 \\
+3, n \equiv 3 \mod 4
+\end{cases}, n\ge 12
+$$
+
+显然，$f(n)_{max} = 3$ ，即我们的算法最多会使用 $3$ 张5分邮票。
+
+{% endhideToggle %}
+
+## 强化归纳
+
+用数学归纳法证明：
+$$
+\forall n\in\mathbb{N}^{*}, \sum_{i=1}^{n} \frac1{i^3} \le 2
+$$
+其中，$\mathbb{N}^{*}$表示正整数。
+{% hideToggle 解答 %}
+
+证明：下面我们证明一个更强的命题：
+$$
+\forall n\
+$$
+
+
 {% endhideToggle %}
 
 
