@@ -6,7 +6,7 @@ tag: 离散数学与概率论
 mathjax: true
 date: 2022-08-28 13:36:22
 description: 一个数学证明提供了一种确保一个命题为真的手段。证明是非常强大的，并且从某种程度上证明其实很像计算机程序。
-cover: https://res.cloudinary.com/cuijiacai/image/upload/v1661665935/discrete-mathematics/proofs/proofs_ajvmwv.png
+cover: https://s2.loli.net/2022/09/05/9UHdjBXFnlP2uwI.png
 ---
 
 # 证明
@@ -327,7 +327,7 @@ $\quad$ 结论： $\neg P\Longrightarrow\neg R\wedge R$ ，这是一个矛盾，
 
 在继续之前，我们先声明一个之后证明定理2.6会用到的一个简单的引理。这个引理的证明过程推迟到下一讲我们学习归纳法的时候再提，暂时我们先承认它是对的（当然，它看起来就很显然）。
 
-{% note blue 'fas fa-ruler' flat %}
+{% note orange 'fas fa-paperclip' flat %}
 **引理2.1：** 每个比1大的自然数要么是一个质数，要么有一个质因数。
 {% endnote %}
 
@@ -384,7 +384,7 @@ $\sqrt{2}$ 呢？你觉得它是有理数还是无理数？答案如下。
 
 > 当然，我不是在写数学教材，而是在写一个类似于笔记一样的教程，所以我会把我的解答也附在题目后面，不过读者最好能够自己先写，写完了之后再看我的解答。
 
-{% note blue 'fas fa-ruler' flat %}
+{% note orange 'fas fa-paperclip' flat %}
 **引理2.2：** 如果 $a^2$ 是偶数，那么 $a$ 也是偶数。
 
 {% endnote %}

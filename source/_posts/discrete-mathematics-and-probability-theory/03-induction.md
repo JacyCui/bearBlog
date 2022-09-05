@@ -5,7 +5,7 @@ keywards: discrete-mathematics-and-probability-theory
 tag: 离散数学与概率论
 mathjax: true
 description: 归纳是一种四两拨千斤数学证明方法。
-cover: https://res.cloudinary.com/cuijiacai/image/upload/v1661794978/discrete-mathematics/induction/cover_f2hn4x.png
+cover: https://s2.loli.net/2022/09/05/YbqrWN2HfFRg6wU.png
 date: 2022-08-30 01:43:22
 ---
 
@@ -74,7 +74,7 @@ $$
 
 由于多米诺骨牌靠近着排成了一排，如果我们向后撞倒了第k个骨牌，它就会推倒第k+1个骨牌。推倒了第k个骨牌就相当于证明了 $P(k)$ 为真。 递归步骤就相当于证明了骨牌之间的距离足以让上一个骨牌被撞倒的时候撞倒下一个骨牌。
 
-![dominoes](https://res.cloudinary.com/cuijiacai/image/upload/v1661847620/discrete-mathematics/induction/dominoe_v0rgfv.png)
+![dominoes](https://s2.loli.net/2022/09/05/eK3sqBiRrJvcZfV.png)
 
 基础情况 （$n=0$） 推倒了第0个骨牌，从而引发了一个连锁反应，推倒了所有的骨牌，相当于证明了所有的 $P(i)$ 。
 
@@ -121,7 +121,7 @@ $$
 
 在这一讲中，我们考虑一个更简单版本的四色定理。我们定义地图以在长方形中画直线的方式给出，每条直线会将长方形分成两个区域。我们能够用不超过两种颜色（比如说红色和蓝色）为这个简化版的地图染色，使得任意两个相邻的区域不同色吗？为了表意更清楚一些，这里是一个2-染色的地图示例：
 
-![two-colored-example](https://res.cloudinary.com/cuijiacai/image/upload/v1661854878/discrete-mathematics/induction/two-colored-example_pquyfq.png)
+![two-colored-example](https://s2.loli.net/2022/09/05/eliXNBcxnLrUZEm.png)
 
 {% note blue 'fas fa-ruler' flat %}
 **定理3.3：** 令 $P(n)$ 表示语句“任意一张上述形式的有n条线的地图是可二染色的”，有 $\forall n\in\mathbb{N} P(n)$ 。
@@ -142,7 +142,7 @@ $$
 
 考虑上述事实，我们将之前移除的那条线再放回去，让线的一侧的所有区域颜色保持不变，线的另一侧的所有区域颜色翻转，如下图所示：
 
-![two-colored-induction](https://res.cloudinary.com/cuijiacai/image/upload/v1661854957/discrete-mathematics/induction/two-colored-induction_mqvdqi.png)
+![two-colored-induction](https://s2.loli.net/2022/09/05/xipnQbX6o5IzmHA.png)
 
 于是，我们得到了 $k + 1$ 根线的地图上的一个有效的二染色方案，即 $P(k + 1)$ 为真。
 
@@ -366,7 +366,7 @@ $$
 
 我们在标题里面说过这个小节需要编程，到了兑现承诺的时候了——一个简单的计算 $F(n)$ 的递归程序：
 
-![fib1](https://res.cloudinary.com/cuijiacai/image/upload/v1662011035/discrete-mathematics/induction/fib1_nghbk6.png)
+![fib1](https://s2.loli.net/2022/09/05/Cz4FT1s6LB8fUmI.png)
 
 <!--
     \begin{algorithm}
@@ -389,7 +389,7 @@ $$
 
 上面的这个练习应当能够让给你觉得善变的方法是一个非常低效的计算第 $n$ 个斐波那契数的方法。这里有一个快得多的迭代算法能够完成相同的任务（这是应该是一个很熟悉的将*尾递归(tail-recursion)*转化成迭代算法的例子）：
 
-![fib2](https://res.cloudinary.com/cuijiacai/image/upload/v1662011035/discrete-mathematics/induction/fib2_sgw21e.png)
+![fib2](https://s2.loli.net/2022/09/05/f2vcK4MTsqexjBm.png)
 
 <!--
     \begin{algorithm}
@@ -427,7 +427,7 @@ $$
 
 上述算法用伪代码描述为如下：
 
-![bsf](https://res.cloudinary.com/cuijiacai/image/upload/v1662011035/discrete-mathematics/induction/bsf_ml6sh6.png)
+![bsf](https://s2.loli.net/2022/09/05/YnCIDuyEkMLQ18K.png)
 
 <!--
     \begin{algorithm}
@@ -590,7 +590,7 @@ $$
 
 {% hideToggle 解答 %}
 设计算法：
-![find-celebrity](https://res.cloudinary.com/cuijiacai/image/upload/v1662042365/discrete-mathematics/induction/find-celebrity_baau5x.png)
+![find-celebrity](https://s2.loli.net/2022/09/05/XfvskFomguNjRGH.png)
 
 <!--
     \begin{algorithm}
@@ -686,7 +686,7 @@ $$
 {% hideToggle 解答 %}
 设计算法：
 
-![postage-makeup](https://res.cloudinary.com/cuijiacai/image/upload/v1662048080/discrete-mathematics/induction/postage-makeup_aeefd1.png)
+![postage-makeup](https://s2.loli.net/2022/09/05/NiWkL9wouYxzs57.png)
 
 <!--
     \begin{algorithm}

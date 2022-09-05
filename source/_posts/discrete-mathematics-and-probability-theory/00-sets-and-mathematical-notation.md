@@ -6,7 +6,7 @@ keywards: discrete-mathematics-and-probability-theory
 tag: 离散数学与概率论
 mathjax: true
 date: 2022-08-26 21:25:22
-cover: https://res.cloudinary.com/cuijiacai/image/upload/v1661521374/discrete-mathematics/sets-and-notation/sets_pzprkp.png
+cover: https://s2.loli.net/2022/09/05/ykPFafXnq5DvVEL.png
 ---
 
 # 集合

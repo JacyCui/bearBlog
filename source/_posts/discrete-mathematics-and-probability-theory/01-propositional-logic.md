@@ -5,7 +5,7 @@ abbrlink: 58002
 keywards: discrete-mathematics-and-probability-theory
 tag: 离散数学与概率论
 mathjax: true
-cover: https://res.cloudinary.com/cuijiacai/image/upload/v1661584594/discrete-mathematics/propositional-logic/proposition_fuxsnm.png
+cover: https://s2.loli.net/2022/09/05/3yqGKfQhgvL1mW9.png
 date: 2022-08-27 15:17:22
 ---
 
@@ -339,7 +339,10 @@ $$
 下面是一种等价形式：
 
 $$
-\forall x\forall y\forall v\forall z((x \ne y \wedge y\ne v \wedge v\ne x \wedge x\ne z \wedge y\ne z \wedge v\ne z)\Longrightarrow \neg(P(x)\wedge P(y)\wedge P(v)\wedge P(z)))
+\forall x\forall y\forall v\forall z((x \ne y \wedge y\ne v \wedge v\ne x \wedge x\ne z \wedge y\ne z \wedge v\ne z)
+$$
+$$
+\Longrightarrow \neg(P(x)\wedge P(y)\wedge P(v)\wedge P(z)))
 $$
 
 > 这里请停一下，确认自己理解为什么上面两个式子说的是同一件事情。
