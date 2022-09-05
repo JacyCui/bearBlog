@@ -5,7 +5,7 @@ keywards: discrete-mathematics-and-probability-theory
 tag: 离散数学与概率论
 mathjax: true
 date: 2022-09-02 21:08:23
-description: 
+description: 在前面两讲中，我们已经讨论了一些证明的技巧（直接证明、逆否法、反证法、例证法、归纳法）。在这一讲中，我们将会应用这些证明技巧中的一部分来分析“稳定匹配问题”的解决方案——“请求-拒绝算法”。
 cover: https://s2.loli.net/2022/09/05/LQGbHAMn2sa5y3I.png
 ---
 
