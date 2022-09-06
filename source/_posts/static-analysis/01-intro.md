@@ -27,7 +27,7 @@ cover: https://s2.loli.net/2022/09/05/ZRsKrU6uxhiv1SP.png
 有些可惜的是，静态分析并不能对于我们上面关心的问题给出一个确切的答案。
 
 {% note purple 'fas fa-ruler' flat %}
-{%label 定理1.1 purple %}：**Rice定理（Rice Theorem）**对于使用**递归可枚举（Recursively Enumerable）**的语言描述的程序，其任何**有价值（Non-trivial）**的性质都是无法完美确定的。
+{% label 定理1.1 purple %}：**Rice定理（Rice Theorem）**对于使用**递归可枚举（Recursively Enumerable）**的语言描述的程序，其任何**有价值（Non-trivial）**的性质都是无法完美确定的。
 {% endnote %}
 
 在这个定理中，有几个字眼需要我们稍微关注一下：
