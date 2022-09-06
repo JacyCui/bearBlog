@@ -5,8 +5,8 @@ keywards: static-analysis
 tag: 静态分析
 mathjax: true
 date: 2022-08-29 14:45:22
-description: 静态分析的概念和基本过程的介绍
-cover: https://res.cloudinary.com/cuijiacai/image/upload/v1661770252/static-analysis/introduction/cover_c0aixs.png
+description: 介绍静态分析的概念和基本过程。
+cover: https://s2.loli.net/2022/09/05/ZRsKrU6uxhiv1SP.png
 ---
 
 
@@ -80,7 +80,7 @@ $$
 
 -  贪婪的静态分析保证了完整性，妥协了正确性，会饱和估计（Overapproximate）程序的行为，因此会出现假积极（False Positive）的现象，即判定为积极，但实际是消极的。反映在现实场景中即为误报问题。
 
-![false-positive](https://res.cloudinary.com/cuijiacai/image/upload/v1661756088/static-analysis/introduction/false-positive_rxcfgi.jpg)
+![false-positive](https://s2.loli.net/2022/09/05/KeijU9TugkCqhSI.jpg)
 
 > 在继续推进之前，我们先解释一下积极和消极的含义，对于客观世界来说， $T$ 是积极的， $\overline T$ 是消极的，从S的视角来看， $A$ 是积极的， $\overline A$ 是消极的。
 > 
@@ -98,7 +98,7 @@ $$
 
 - 懒惰的静态分析保证了正确性，妥协了完整性，会保守估计（Underapproximate）程序的行为，因此会出现假消极（False Negative）现象，即判定为消极（在 $\overline A$ 中），但实际是积极（在 $T$ 中）。反映在现实场景中即为漏报问题。
 
-![false-negative](https://res.cloudinary.com/cuijiacai/image/upload/v1661756087/static-analysis/introduction/false-negative_kag5um.jpg)
+![false-negative](https://s2.loli.net/2022/09/05/7blaoQWGT4zvIUt.jpg)
 
 和定义1.5类似，我们可以形式化的定义出False Negative：
 
@@ -149,7 +149,7 @@ output x;
 # 抽象
 
 {% note green 'fas fa-lightbulb' flat %}
-{% label 结论1.3 green %}：如果用两个词概括静态分析，可以是**抽象（Abstraction）**和**饱和估计（Overapproximation）**。
+{% label 结论1.2 green %}：如果用两个词概括静态分析，可以是**抽象（Abstraction）**和**饱和估计（Overapproximation）**。
 {% endnote %}
 
 其中，饱和估计已经阐释的很清楚了（一个式子总结就是$T \subseteq A$），下面我们来看一下抽象。
@@ -191,7 +191,10 @@ $$
 再定义 $f_2 = f_{Op\times D_A\times D_A \to D_A}$ 如下：
 
 $$
-f_2 = \{(+, +, +, +), (+, -, -, -), (+, +, -, \top), (+, 0, 0, 0), (/, +, +, +), (/, -, -, +), (/, \top, 0, \bot), (/, +, -, -), ......\}
+f_2 = \{(+, +, +, +), (+, -, -, -), (+, +, -, \top), (+, 0, 0, 0),
+$$
+$$
+(/, +, +, +), (/, -, -, +), (/, \top, 0, \bot), (/, +, -, -), ......\}
 $$
 
 基于此：
