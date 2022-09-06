@@ -4,7 +4,7 @@ abbrlink: 46211
 keywards: static-analysis
 tag: 静态分析
 mathjax: true
-cover: 'https://s2.loli.net/2022/09/06/3ZjHvl87UJzIMqa.png'
+cover: https://s2.loli.net/2022/09/06/3ZjHvl87UJzIMqa.png
 date: 2022-09-06 10:51:22
 description: 数据流分析的基本概念、步骤和应用，以定义可达性分析、变量活性分析、空闲表达式分析为例。
 ---
