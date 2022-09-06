@@ -207,7 +207,7 @@ $$
 不过我们还不能因此说明我们的迭代算法也有这样的性质，除非我们之后可以将迭代算法和不动点定理关联起来。
 
 {% note purple 'fas fa-ruler' flat %}
-{% label 定理4.7 purple %}：汇集$\wedge$/联合$\vee$操作是单调的。
+{% label 定理4.7 purple %}：汇集 $\wedge$ / 联合 $\vee$ 操作是单调的。
 {% endnote %}
 
 > 证明： $\forall x, y, z\in L$ ，若 $x \preceq y$ ，由于 $x \wedge z \preceq x \preceq y$ ， $x \wedge z \preceq z$ ，于是有 $x \wedge z \preceq y \wedge z$ ，从而 $\wedge$ 是单调的。
