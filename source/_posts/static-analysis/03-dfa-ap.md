@@ -18,7 +18,7 @@ description: 数据流分析的基本概念、步骤和应用，以定义可达�
 
 - 分析的对象是基于抽象（Abstraction，见定义1.7）的**应用特定型数据（Application-Specific Data）**；
 - 分析的行为是数据的“流动”，分析的方式是**安全估计（Safe-Approximation）**——根据安全性需求选择饱和估计（Over-Approximation）还是保守估计（Under-Approximation）；
-- 分析的基础是控制流程图（Control Flow Graph, CFG），CFG是程序P的表征；
+- 分析的基础是控制流图（Control Flow Graph, CFG），CFG是程序P的表征；
 - 数据流动的场景有两个：
    - 在CFG的点（Node）内流动，即程序基块内部的数据流；
    - 在CFG的边（Edge）上流动，即由基块间控制流触发的数据流。

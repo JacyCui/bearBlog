@@ -370,20 +370,20 @@ class C extends A {
 
 最后我们会发现存在一个不可达的方法（Unreachable Method） `C.m()` ，那么这个方法中的代码就是死代码（Dead Code，即在任何情况下控制流都不能到达的代码）。
 
-# 过程间控制流程图
+# 过程间控制流图
 
 CFG代表了一个独立方法的控制流结构，类似的，我们可以用ICFG（Interprocedural Control Flow Graph）来代表整个程序的控制流结构。有了ICFG，我们就可以用分析CFG的方式来分析整个程序。
 
 {% note blue 'fas fa-book' flat %}
-{% label 定义5.9 blue %}：定义一个程序的**过程间控制流程图（Interprocedural Control Flow Graph，ICFG）**由两个部分组成：
+{% label 定义5.9 blue %}：定义一个程序的**过程间控制流图（Interprocedural Control Flow Graph，ICFG）**由两个部分组成：
 
-- 程序中所有方法的控制流程图，其中的边称为**CFG边（CFG Edge）**；
+- 程序中所有方法的控制流图，其中的边称为**CFG边（CFG Edge）**；
 - 两种额外的边：
     - **调用边（Call Edge）**：从调用点（Call Site）到调用点对应的被调用者（Callee）的入口结点（Entry Node）的边；
     - **返回边（Return Edge）**：从被调用者的出口结点（Exit Node）到**返回点（Return Site, 控制流中紧接着调用点的语句）**的边。
 {% endnote %}
 
-简单理解， `ICFG = CFG + call & return edges` ，连接调用边和返回边的信息可以从调用图中获得。因此，过程间控制流程图的精度取决于调用图的精度。
+简单理解， `ICFG = CFG + call & return edges` ，连接调用边和返回边的信息可以从调用图中获得。因此，过程间控制流图的精度取决于调用图的精度。
    
 我们可以通过一个例子来更直观的理解一下上面的定义。
 
