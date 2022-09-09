@@ -487,7 +487,7 @@ class A {
 ## 类型敏感
 
 {% note blue 'fas fa-book' flat %}
-{% label 定义8.9 blue %}：定义**类型敏感（Type Sensitivity）**：
+{% label 定义8.11 blue %}：定义**类型敏感（Type Sensitivity）**：
 $$
 c' = [t', ..., t''] \Longrightarrow Select(\underline{\ }, \underline{\ }, c':o_i) = [t', ..., t'', InType(o_i)]
 $$
@@ -501,7 +501,7 @@ $$
 类似的，我们也可以定义k-类型敏感来限制冗长的上下文。
 
 {% note blue 'fas fa-book' flat %}
-{% label 定义8.10 blue %}：定义**类型敏感（Type Sensitivity）**：
+{% label 定义8.12 blue %}：定义**k-类型敏感（k-Type Sensitivity）**：
 $$
 c' = [t_1, ..., t_k] \Longrightarrow Select(\underline{\ }, \underline{\ }, c':o_i) = [t_2, ..., t_k, InType(o_i)]
 $$
