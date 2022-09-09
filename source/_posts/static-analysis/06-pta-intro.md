@@ -172,7 +172,7 @@ for (i = 0; i < 3; i++) {
 ### 如何模拟调用上下文？
 
 {% note blue 'fas fa-book' flat %}
-{% label 定义6.6 blue %}：称一个静态分析是**上下文敏感的（Context-sensitive）**，如果它区分一个方法不同的的**调用语境（Calling Context）**；称一个静态分析是**上下文不敏感的（Context-insensitive）**，如果它将一个方法所有的调用语境汇合到一起分析。
+{% label 定义6.6 blue %}：称一个静态分析是**上下文敏感的（Context-Sensitive, C.S.）**，如果它区分一个方法不同的的**调用语境（Calling Context）**；称一个静态分析是**上下文不敏感的（Context-Insensitive, C.I.）**，如果它将一个方法所有的调用语境汇合到一起分析。
 {% endnote %}
 
 在上下文敏感的分析中，对于每一个调用的上下文都会单独分析，因此，一个方法可能在不同的上下文中被分析很多次。

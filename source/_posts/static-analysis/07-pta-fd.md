@@ -96,7 +96,7 @@ $$
 {% note blue 'fas fa-book' flat %}
 {% label 定义7.5 blue %} 一个程序的**指针流图(Pointer Flow Graph)**指的是表示对象如何在程序中的指针之间流动的有向图。
 - PFG中的一个节点 $n$ 代表了一个变量或者某个对象的一个字段，即
-    $$n \in Pointer = V \cup (O\times F)$$
+    $$n \in Pointer \subseteq V \cup (O\times F)$$
 - PFG中的一条边 $x \to y \in Pointer\times Pointer$ 表示指针 $x$ 指向的对象可能会流到指针 $y$ 的指向集合中（即也可能被 $y$ 指向）。
 
 其中， $V$ 表示程序中所有变量的集合， $O$ 表示所有对象的集合， $F$ 表示所有字段的集合。
@@ -139,11 +139,11 @@ PFG的节点是容易确定的，就是程序中所有的指针；于是，我�
 {% note orange 'fas fa-calculator' flat %}
 {% label 算法7.1 orange %}：过程内上下文不敏感的全程序指针分析算法
 
-![pta-intra-alg.png](https://s2.loli.net/2022/09/07/YOp5f2awksKcGJ7.png)
+![pta-intra-alg](https://s2.loli.net/2022/09/09/yQvX2gdJl93TeUk.png)
 
 <!--
     \begin{algorithm}
-    \caption{Intraprocedural Content-Insensitive Whole-Program Pointer Analysis}
+    \caption{Intraprocedural Context-Insensitive Whole-Program Pointer Analysis}
     \begin{algorithmic}
     \INPUT Set of statements of the input program $S$.
     \OUTPUT Pointer flow graph $PFG$ and point-to set of each pointer $x$ denoted by $pt(x)$.
@@ -328,11 +328,11 @@ e = d.f;
 {% note orange 'fas fa-calculator' flat %}
 {% label 算法7.2 orange %}：过程间上下文不敏感的全程序指针分析算法
 
-![pta-inter-alg](https://s2.loli.net/2022/09/08/oKJEteAmn3sGPcl.png)
+![pta-inter-alg](https://s2.loli.net/2022/09/09/x64LeGNtgpiwSZ8.png)
 
 <!--
     \begin{algorithm}
-    \caption{Interprocedural Content-Insensitive Whole-Program Pointer Analysis}
+    \caption{Interprocedural Context-Insensitive Whole-Program Pointer Analysis}
     \begin{algorithmic}
     \INPUT Entry method $m^{entry}$.
     \OUTPUT Pointer flow graph $PFG$ and point-to set of $pt(x)$ and call graph $CG$.
@@ -370,7 +370,7 @@ e = d.f;
                 \STATE $pt(x) := \{\}$ \COMMENT{poinrt-to set of each pointer, initialized as empty}
             \ENDFOR
             \FOR{\textbf{each} $i:x=new\ T()\in S_{m}$}
-                \STATE add $(x, o_i)$ to $WL$
+                \STATE add $(x, \{o_i\})$ to $WL$
             \ENDFOR
             \FOR{\textbf{each} $x=y\in S_{m}$}
                 \STATE \CALL{AddEdge}{$y, x$}
