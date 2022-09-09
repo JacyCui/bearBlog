@@ -5,7 +5,7 @@ keywards: static-analysis
 tag: 静态分析
 mathjax: true
 date: 2022-09-08 12:02:24
-description:
+description: 这一讲我们会在上一讲的基础上引入上下文敏感的相关内容，并介绍3种常见的上下文敏感策略。
 cover: https://s2.loli.net/2022/09/08/xtAdzujhCVGMl4P.png
 ---
 
