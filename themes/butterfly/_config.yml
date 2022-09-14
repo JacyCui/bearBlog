@@ -6,7 +6,10 @@ menu:
   首页: / || fas fa-home
   时间轴: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
-  # 分类: /categories/ || fas fa-folder-open
+  分类: /categories/ ||fas fa-folder-open
+  系列教程||fas fa-book:
+    静态分析: https://static-analysis.cuijiacai.com || fas fa-vial
+    # SICP: /tutorials/sicp || fas fa-computer
   # 清单||fa fa-heartbeat:
   #   音乐: /music/ || fas fa-music
   #   照片: /Gallery/ || fas fa-images
@@ -496,7 +499,7 @@ index_top_img_height:
 # The user interface setting of category and tag page (category和tag頁的UI設置)
 # index - same as Homepage UI (index 值代表 UI將與首頁的UI一樣)
 # default - same as archives UI 默認跟archives頁面UI一樣
-category_ui: # 留空或 index
+category_ui: index # 留空或 index
 tag_ui: # 留空或 index
 
 # Website Background (設置網站背景)
@@ -642,7 +645,7 @@ aside:
       link: https://github.com/JacyCui
   card_announcement:
     enable: true
-    content: 更新了个人博客搭建教程
+    content: 更新了静态分析基础教程，见右上方系列教程下拉菜单
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
